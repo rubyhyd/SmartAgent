@@ -10,36 +10,16 @@ padding-right: 17px;
 }
 //设置header
 .navbar {
-  background-color: #fff;
 
   .navbar-brand {
-    width: 200px;
     background-image: image-url("logo2.png");
     background-position: 0  50%;
-    padding-left:0px;
     background-repeat:no-repeat;
     background-size: 90%;
+    background-width: 200px;
   }
-  
-   div.pull-left {
-     margin-top:16px; 
+}
     
-      .logo-text {
-        font-size:1.1em;
-        color:#aaa;
-      }
-
-   }
-   .or {
-    margin-top:15px;
-    color:#aaa;
-    }
-    
-   }
-.navbar.navbar-fixed-top {
-    border-bottom:"1";
-    border-bottom-color:#eeeeee;
-    }
 //设置alert条
 .alert {
   margin-top: 10px;

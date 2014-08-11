@@ -1,0 +1,31 @@
+nar.navbar.navbar-fixed-top role='navigation'
+  div.navbar-brand
+     
+  div
+    p.navbar-text Your Peronal Smart Agent
+  div.navbar-right
+    ul.nav.navbar-nav
+      - if signin?
+        li 
+          = link_to "index", pages_index_path
+        li 
+          = link_to "createapp", pages_createapp_path
+        li
+          = link_to "apps", pages_apps_path
+        li
+          = link_to "resources", pages_resources_path
+        li.dropdown
+          a.dropdown-toggle href='#' data-toggle="dropdown"
+            b.caret
+          ul.dropdown-menu
+            li
+              = link_to "developer", pages_developer_path
+            li
+              = link_to "sign out", signout_path
+      - else
+        li
+          = link_to "sign in", signin_path
+        li
+          p.navbar-text or
+        li 
+          = link_to "sign up", signup_path

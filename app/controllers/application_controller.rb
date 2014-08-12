@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user, :signin? 
 
+  def authenticate
+    redirect_to signin_url unless current_user
+  end
+
   private
 
   def current_user

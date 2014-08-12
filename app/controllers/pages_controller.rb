@@ -1,21 +1,22 @@
 class PagesController < ApplicationController
+  before_action :authenticate, except: [:start]
+
+
   def start
     if signin?
-      render :index
+      redirect_to pages_index_url 
     end
   end
+
   def index
-		if signin?
 			@apps = current_user.apps.all
-			render :index
-		end
   end
+
   def location
   end
+
   def myapps
-    if signin?
       @apps = current_user.apps.all
-    end
   end
 
   def createapp

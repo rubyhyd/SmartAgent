@@ -1,5 +1,4 @@
-$('#resource .modal-body').html("<%= escape_javascript(render partial: 'share/resource_grid', locals: { resources: @resources, descriptions: descriptions, identifications: identifications}) %>")
-
+$('#resource .modal-body').html("<%= escape_javascript(render partial: 'share/resource_grid', locals: {resource_name: resource_name, resources: @resources, descriptions: descriptions, identifications: identifications}) %>")
 
 $(document).ready(function(){
     $('.modal a').hover(

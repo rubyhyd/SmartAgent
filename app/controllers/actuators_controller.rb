@@ -6,22 +6,23 @@ class ActuatorsController < ApplicationController
   # GET /actuators.json
   def index
     @resources =  Actuator.all
-	descriptions = Array.new
-	identifications = Array.new
-	@resources.each do |actuator|
-		descriptions.push(actuator_description actuator.capbility)
-		identifications.push(actuator_identification actuator.capbility)
-	end
-	respond_to do |format|
-		format.js { render 'share/resource_grid', locals: {resource_name: '执行器', descriptions: descriptions, identifications: identifications}}
-		format.html
-	end
+		descriptions = Array.new
+		identifications = Array.new
+		@resources.each do |actuator|
+			descriptions.push(actuator_description actuator.capbility)
+			identifications.push(actuator_identification actuator.capbility)
+		end
+		respond_to do |format|
+			format.js { render 'share/resource_grid', locals: {resource_name: '执行器', descriptions: descriptions, identifications: identifications}}
+			format.html
+		end
   end
 
 
   def queryAll
-    @actuator = Actuator.all
-    render json: @actuators
+    @actuators = Actuator.all
+		response.headers['Access-Control-Allow-Origin'] = '*'
+    render json: @actuators, content_type: "application/json"
   end
 
   # GET /actuators/1

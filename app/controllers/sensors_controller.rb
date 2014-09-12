@@ -7,13 +7,13 @@ class SensorsController < ApplicationController
   # GET /sensors.json
   def index
     @resources = Sensor.all
-	descriptions = Array.new
-	identifications = Array.new
-	@resources.each do |sensor|
-		descriptions.push(sensor_description sensor.capbility)
-		identifications.push(sensor_identifier sensor.capbility)
-	end
-    respond_to do |format|  
+		descriptions = Array.new
+		identifications = Array.new
+		@resources.each do |sensor|
+			descriptions.push(sensor_description sensor.capbility)
+			identifications.push(sensor_identifier sensor.capbility)
+		end
+		respond_to do |format|  
       format.js { render 'share/resource_grid', locals: {resource_name: '传感器', descriptions: descriptions, identifications: identifications}}
       format.html
     end
@@ -21,7 +21,8 @@ class SensorsController < ApplicationController
 
   def queryAll
     @sensors = Sensor.all
-    render json: @sensors
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    render json: @sensors, content_type: "application/json" 
   end
 
   # GET /sensors/1

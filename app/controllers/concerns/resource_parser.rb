@@ -9,6 +9,11 @@ module ResourceParser
 	def sensor_parse xml
 		a = Hash.new
 		doc = Document.new(xml)
+		
+		doc.elements.each('sml:SensorML/sml:Parameter/*') do |ele|
+			a[(ele.attribute :name).to_s] = ele.get_elements("gml:description").first.text
+		end
+
 		doc.elements.each('sml:SensorML/sml:Observation/swe:DataRecord/swe:field/*') do |ele|
 			if ele.get_elements("sml:isTrigger").first.text == 'true'
 				a[(ele.attribute :name).to_s] = ele.get_elements("gml:description").first.text
@@ -46,11 +51,11 @@ module ResourceParser
 
 	def actuator_identification xml
 		a = Hash.new
-	    doc = Document.new(xml)
-	    doc.elements.each("sml:SensorML/sml:Identification/sml:IdentifierList/sml:identifier") do |ele|
-	        a[(ele.attribute :name).to_s] = ele.get_elements("sml:Term/sml:value").first.text
-	    end
-	    a
+	  doc = Document.new(xml)
+	  doc.elements.each("sml:SensorML/sml:Identification/sml:IdentifierList/sml:identifier") do |ele|
+	  	a[(ele.attribute :name).to_s] = ele.get_elements("sml:Term/sml:value").first.text
+	  end
+	  a
 	end
 
 	def actuator_description xml
@@ -61,5 +66,14 @@ module ResourceParser
 		end
 		a
 	end
-
+	def actuator_parameter xml
+		a = Hash.new
+		doc = Document.new(xml)
+		doc.elements.each("sml:SensorML/sml:Observation/swe:DataRecord/swe:field/*") do |ele|
+			if ele.get_elements("sml:toActuator").first.text == true
+				a[(ele.attributs :name).to_s] = ele.get_elements("gml:description").first.text
+			end
+		end
+		a
+	end
 end

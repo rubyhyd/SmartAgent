@@ -12,9 +12,9 @@
 	var window_width = $(window).width();
 	var percent = 0.18;
 	var flag = false;
+
 	function dragstart(event)
-	{console.log("FF");
-		
+	{	
 		if(event.target.id == "triggercanvas")
 		{
 		
@@ -259,3 +259,15 @@ ctx.stroke();*/
 	};
 	
 	$(document).ready(cuidie_drag);
+
+
+
+// modal tagsinput
+function myfunc(){
+	$("#mail-content").addTag("sth");
+		//console.log("button click")}
+}
+function addTags(str){
+	if(!$('#mail-content').tagExist(str))
+		$('#mail-content').addTags(str);
+}

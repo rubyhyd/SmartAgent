@@ -1,22 +1,44 @@
-<% 
-  if resource == :sensor 
-    param_name = :condition
-    urlpath = buildsensor_path
-  else 
-    param_name = :params
-    urlpath = buildactuator_path
-  end %>
-
-  <%= form_for param_name, url: urlpath, remote: true do |f| %>
-    <% labels.each do |k, v| %>
-      <div class="form-group">
-        <%= f.label v %>
-        <%= f.text_field k, class: 'form-control' %>
-      </div>
-    <% end %>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
-      <%= f.submit '确定', class: "btn btn-primary" %>
-    </div>
-  <% end %>
-
+<% if resource == :sensor %>
+	<%= form_for :condition, url: buildsensor_path, remote: true do |f| %>
+		<% labels.each do |k,v| %>
+			<%= f.label v %>
+			<div class="input-group">
+				<div class="input-group-btn" style="width: 120px">
+					<%= select_tag(:prefix, options_for_select([['包含','@Contain'],['等于','@Equal']]), type: 'button', class: 'btn btn-default dropdown-toggle') %>
+				</div>
+				<%= f.text_field k, class: 'form-control', style: 'width: 400px' %>
+			</div>
+		<% end %>
+		<br/>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+		<%= f.submit '确定', class: "btn btn-primary" %>
+	</div>
+	<% end %>
+<% else %>
+	<%= form_for :params, url: buildactuator_path, remote: true do |f| %>
+		<% labels.each do |k,v| %>
+			<div class="form-group">
+				<%= f.label v %>
+				<% if k == 'content' %>
+					<%= f.text_area k, class: 'form-control', id: 'mail-content'%>
+				<% else %>
+					<%= f.text_field k, class: 'form-control' %>
+				<% end %>
+			</div>
+		<% end %>
+		
+		<a class="btn btn-default" onclick="myfunc()">Add sth</a> 
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			<%= f.submit '确定', class: "btn btn-primary" %>
+		</div>
+	<% end %>
+<% end %>
+<script type="text/javascript">
+	$(function(){
+		$("#mail-content").tagsInput({
+			'defaultText': ""
+		});
+	});
+</script>

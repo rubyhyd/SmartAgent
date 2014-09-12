@@ -8,13 +8,13 @@
         <% identifications[i].each do |k,v| %>
           <% content +=  k.to_s + ":" + v.to_s + "\n" %>
         <% end %>
-
-        <%= link_to image_tag('heihei.jpg'), resources[i], remote: true, class: 'resource-img', "data-toggle" => "popover", title: resources[i].name, "data-content" => content, 'data-placement' => '' %>
-        <figcaption>
-        <span><%= resources[i].name %></span>
-        <% descriptions[i].each do |k,v| %>
-         <%= k %>:</br><%= v %>
-        <% end %>
+				<% if resource_name == '传感器' %>
+        	<%= link_to image_tag('sensor'+(i+1).to_s+'.png'), resources[i], remote: true, class: 'resource-img', "data-toggle" => "popover", title: resources[i].name, "data-content" => content, 'data-placement' => '' %>
+        <% else %>
+					<%= link_to image_tag('actuator'+(i+1).to_s+'.png'), resources[i], remote: true, class: 'resource-img', "data-toggle" => "popover", title: resources[i].name, "data-content" => content, 'data-placement' => '' %>
+				<% end %>
+				<figcaption>
+        <span><%= resources[i].name %></br></span>
         </figcaption>
         </figure>
       </div>

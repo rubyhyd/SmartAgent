@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 	
 	def queryApps
+    response.headers['Access-Control-Allow-Origin'] = '*'
 		@apps = User.find(params[:user_id]).apps
 		#@apps = current_user.apps
 		render json: @apps

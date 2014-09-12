@@ -1,24 +1,26 @@
-<table class="table table-bordered">
+<table class="table table-striped table-bordered table-condensed">
 <thead>
   <tr>
-    <th>名称 </th>
-    <th>描述 </th>
-    <th>传感器ID </th>
-    <th>执行器ID </th>
-		<th>开关状态 </th>
-		<th>删除 </th>
+    <th style="text-align: center">名称</th>
+    <th style="text-align: center">App ID</th>
+    <th style="text-align: center">描述</th>
+    <th style="text-align: center">传感器ID</th>
+    <th style="text-align: center">执行器ID</th>
+	<th style="text-align: center">开关状态</th>
+	<th style="text-align: center">删除</th>
   </tr>
 </thead>
 <tbody>
 <% if @apps %>
 <% @apps.each do |app| %>
 	<tr>
-		<td><%= app.name %></td>
-		<td><%= app.description %></td>
-		<td><%= app.sensor_id %></td>
-		<td><%= app.actuator_id %></td>
-		<td><input type="checkbox" name="my-checkbox" checked></td>
-		<td><%= link_to 'Destroy', [current_user, app], method: :delete ,data: { confirm: 'Are you sure?' } %></td>
+		<td style="text-align: center"><%= app.name %></td>
+		<td style="text-align: center"><%= app.id %></td>
+		<td style="text-align: center"><%= app.description %></td>
+		<td style="text-align: center"><%= app.sensor_id %></td>
+		<td style="text-align: center"><%= app.actuator_id %></td>
+		<td style="text-align: center"><input type="checkbox" name="my-checkbox" checked></td>
+		<td style="text-align: center"><%= link_to 'Destroy', [current_user, app], method: :delete ,data: { confirm: 'Are you sure?' } %></td>
 	</tr>
 <% end %>
 <% end %>

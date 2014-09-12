@@ -1,6 +1,5 @@
 <%= javascript_include_tag "special/createapplication" %>
-
-
+ssssssssssss
 <div class="main">
   <div class="container" >
     <div id="cacontainer" ondrop="drop(event)" ondragover="allowdrop(event)">
@@ -21,8 +20,8 @@
           <canvas id="actuatorcanvas" style="border:0;"  draggable="true" ondrag="drag(event);" ondragstart="dragstart(event);" ondragover="allowdrop(event)"> </canvas>
         </div>
         <div id="actuatorcontent" style="position:absolute;top:40%;left:25%;">
-          <%= button_to "执行器", actuators_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-default btn-lg" %> 
-        </div> 
+          <%= button_to "执行器", actuators_path, remote: true, method: :get, "data-toggle" => "modal", class: "btn btn-default btn-lg" %>
+        </div>
       </div>
       <!-- actuator Modal -->
       <div class="modal fade" id="resource" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

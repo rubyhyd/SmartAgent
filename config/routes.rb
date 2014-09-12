@@ -37,6 +37,4 @@ Rails.application.routes.draw do
 	match 'user/sensors', to: "sensors#create",:as => 'user_sensors', via: :post
   resources :sessions, only: [:new, :create, :destroy] 
 
-
-
 end

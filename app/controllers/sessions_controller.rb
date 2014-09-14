@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-
   def sensor
     session[:app]["sensor"]["condition"] = params[:condition] 
   respond_to do |format|
@@ -20,7 +19,7 @@ class SessionsController < ApplicationController
 
 
   def create
-    user = User.authenticate(params[:email], params[:password])
+    user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
     if user
       session[:user_id] = user.id
       flash[:success] = "登陆成功！欢迎回来~"

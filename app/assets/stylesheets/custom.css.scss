@@ -2,157 +2,177 @@
 body {
   font-size: 14px;
   font-family: "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
-}
-//修正打开modal时导航条的偏移
-.modal-open .navbar-fixed-top,
-.modal-open .navbar-fixed-bottom {
-padding-right: 17px;
-}
-//设置header
-.navbar {
-
-  .navbar-brand {
-    background-image: image-url("logo2.png");
-    background-position: 0  50%;
-    background-repeat:no-repeat;
-    background-size: 90%;
-    background-width: 200px;
   }
-}
-    
-//设置alert条
-.alert {
-  margin-top: 10px;
-}
-//设置form
-.form-group {
-
-  .form-control {
-    width:25%;
+  //修正打开modal时导航条的偏移
+  .modal-open .navbar-fixed-top,
+  .modal-open .navbar-fixed-bottom {
+   // padding-right: 17px;
   }
+  //设置header
+  .navbar {
+    background-color: #fff;
 
-  label{
-    color:#fff;
-  }
+    .navbar-brand {
+      width: 200px;
+      background-image: image-url("logo2.png");
+      background-position: 0  50%;
+      padding-left:0px;
+      background-repeat:no-repeat;
+      background-size: 90%;
+                                    }
 
+                                    div.pull-left {
+                                      margin-top:16px; 
 
-}
+                                      .logo-text {
+                                        font-size:1.1em;
+                                        color:#aaa;
+                                                                            }
 
-//set search
-.search {
-  margin-right:0;
-  width: 500px;
-}
+                                                                               }
+                                                                               .or {
+                                                                                 margin-top:15px;
+                                                                                 color:#aaa;
+                                                                                                }
 
-//设置main
-.main {
-  margin-top: 51px;
+                                                                                                   }
+                                                                                                   .navbar.navbar-fixed-top {
+                                                                                                     border-bottom:"1";
+                                                                                                     border-bottom-color:#eeeeee;
+                                                                                                                 }
+                                                                                                                 //设置alert条
+                                                                                                                 .alert {
+                                                                                                                   margin-top: 10px;
+                                                                                                                   }
+                                                                                                                   //设置form
+                                                                                                                   .form-group {
 
+                                                                                                                     .form-control {
+                                                                                                                       width:25%;
+                                                                                                                               }
 
-.form {
-  margin-left:10%;
- }
-.top {
-  padding:40px 0;
-  background-image: image-url("top2.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 45%;
-  //margin:1px 0 15px 0;
-  margin-top: 10px;
-  min-height:300px;
-
-  h1 {
-    color:#fff;
-    font-size:64px;
-    //font-weight:bold;
-    margin-top: 40px;
-    letter-spacing:.05em;
-    margin-bottom: 20px;
-    
-    .you {
-      font-weight:bold;
-     }
-   }
-
-    h3 {
-      padding-left:0.3em;
-      color:#fff;
-      font-size: 32px;
-    }
-
-    h5 {
-      color: #fff;
-      font-size: 16px;
-    }
-    
-    
-}
-//设置middle
-
-.middle {
- margin: 15px 0px; 
-  
-  img {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    width: 20%;
-  }
-
-}
-
-}
-//设置footer
-.footer {
-  margin-top:40px;
-
-  .container { 
-    text-align:center;  
-    p {
-display:inline;
-        margin-left:20px;
-    }
-  }}
+                                                                                                                               label{
+                                                                                                                                 color:#fff;
+                                                                                                                                         }
 
 
+                                                                                                                                       }
+
+                                                                                                                                       //set search
+                                                                                                                                       .search {
+                                                                                                                                         margin-right:0;
+                                                                                                                                         width: 500px;
+                                                                                                                                           }
+
+                                                                                                                                           //设置main
+                                                                                                                                           .main {
+                                                                                                                                             margin-top: 51px;
+
+
+                                                                                                                                             .form {
+                                                                                                                                               margin-left:10%;
+                                                                                                                                                    }
+                                                                                                                                                    .top {
+                                                                                                                                                      padding:40px 0;
+                                                                                                                                                      background-image: image-url("top2.jpg");
+                                                                                                                                                      background-repeat: no-repeat;
+                                                                                                                                                      background-position: 50% 45%;
+                                                                                                                                                      //margin:1px 0 15px 0;
+                                                                                                                                                      margin-top: 10px;
+                                                                                                                                                      min-height:300px;
+
+                                                                                                                                                      h1 {
+                                                                                                                                                        color:#fff;
+                                                                                                                                                        font-size:64px;
+                                                                                                                                                        //font-weight:bold;
+                                                                                                                                                        margin-top: 40px;
+                                                                                                                                                        letter-spacing:.05em;
+                                                                                                                                                        margin-bottom: 20px;
+
+                                                                                                                                                        .you {
+                                                                                                                                                          font-weight:bold;
+                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                    h3 {
+                                                                                                                                                                                                                      padding-left:0.3em;
+                                                                                                                                                                                                                      color:#fff;
+                                                                                                                                                                                                                      font-size: 32px;
+                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                h5 {
+                                                                                                                                                                                                                                                  color: #fff;
+                                                                                                                                                                                                                                                  font-size: 16px;
+                                                                                                                                                                                                                                                                      }
+
+
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                    //设置middle
+
+                                                                                                                                                                                                                                                                    .middle {
+                                                                                                                                                                                                                                                                      margin: 15px 0px; 
+
+                                                                                                                                                                                                                                                                      img {
+                                                                                                                                                                                                                                                                        display:block;
+                                                                                                                                                                                                                                                                        margin-left:auto;
+                                                                                                                                                                                                                                                                        margin-right:auto;
+                                                                                                                                                                                                                                                                        width: 20%;
+                                                                                                                                                                                                                                                                                             }
+
+                                                                                                                                                                                                                                                                                           }
+
+                                                                                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                                                                                         //设置footer
+                                                                                                                                                                                                                                                                                         .footer {
+                                                                                                                                                                                                                                                                                           margin-top:40px;
+
+                                                                                                                                                                                                                                                                                           .container { 
+                                                                                                                                                                                                                                                                                             text-align:center;  
+                                                                                                                                                                                                                                                                                             p {
+                                                                                                                                                                                                                                                                                               display:inline;
+                                                                                                                                                                                                                                                                                               margin-left:20px;
+                                                                                                                                                                                                                                                                                                                       }
+                                                                                                                                                                                                                                                                                                                         }}
 
 
 
-//set modal
-.modal {
-  label {
-    color:#000;
-  }
-  .form-control {
-    width: 100%;
-  }
 
-  .resource-block {
-    width: 25%;
-    float:left; 
-    margin: 1%;
-  }
-  img {
-   width: 100%;
-   height: 220px;
-   display:block; 
-  }
-  span {
-    //display:block;
-    font-weight:bold;
 
-  }
-}
-//hidden a
+                                                                                                                                                                                                                                                                                                                       //set modal
+                                                                                                                                                                                                                                                                                                                       .modal {
+                                                                                                                                                                                                                                                                                                                         label {
+                                                                                                                                                                                                                                                                                                                           color:#000;
+                                                                                                                                                                                                                                                                                                                                   }
+                                                                                                                                                                                                                                                                                                                                   .form-control {
+                                                                                                                                                                                                                                                                                                                                     width: 100%;
+                                                                                                                                                                                                                                                                                                                                             }
 
-#hidden-a {
-  display:none;
-}
+                                                                                                                                                                                                                                                                                                                                             .resource-block {
+                                                                                                                                                                                                                                                                                                                                               width: 25%;
+                                                                                                                                                                                                                                                                                                                                               float:left; 
+                                                                                                                                                                                                                                                                                                                                               margin: 1%;
+                                                                                                                                                                                                                                                                                                                                                               }
+                                                                                                                                                                                                                                                                                                                                                               img {
+                                                                                                                                                                                                                                                                                                                                                                 width: 100%;
+                                                                                                                                                                                                                                                                                                                                                                 height: 220px;
+                                                                                                                                                                                                                                                                                                                                                                 display:block; 
+                                                                                                                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                                                                                                              span {
+                                                                                                                                                                                                                                                                                                                                                                                //display:block;
+                                                                                                                                                                                                                                                                                                                                                                                font-weight:bold;
 
-.tab-content {
-  
-  label {
-    color:#000;
-  }
+                                                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                                                                                                                                          //hidden a
 
-}
+                                                                                                                                                                                                                                                                                                                                                                                          #hidden-a {
+                                                                                                                                                                                                                                                                                                                                                                                            display:none;
+                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                            .tab-content {
+
+                                                                                                                                                                                                                                                                                                                                                                                              label {
+                                                                                                                                                                                                                                                                                                                                                                                                color:#000;
+                                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                                      }
